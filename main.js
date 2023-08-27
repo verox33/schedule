@@ -6,7 +6,7 @@ const table = document.getElementById("ew");
 const tbody = document.querySelector("#Monday > table > tbody");
 
 const nametg = document.getElementById("nametg");
-nametg.textContent = `Hi, ${userName}`;
+nametg.textContent = `Hi, $(userName)`;
 
 const button = document.getElementById('qw');
 
@@ -22,12 +22,14 @@ function addNewRow(index) {
 
     const td02 = document.createElement("td");
     const input01 = document.createElement("input");
+    input01.className = "CNinputs";
     input01.placeholder = "Время";
     td02.appendChild(input01);
     newTR.appendChild(td02);
 
     const td03 = document.createElement("td");
     const input02 = document.createElement("input");
+    input02.className = "CNinputs";
     input02.placeholder = "Предмет";
     td02.appendChild(input02);
     newTR.appendChild(td03);
@@ -37,7 +39,7 @@ function addNewRow(index) {
     button01.textContent = "Удалить";
     td04.appendChild(button01);
     newTR.appendChild(td04);
-
+    const buttonsave = document.createElement("button")
     button01.addEventListener('click', () => {
         newTR.remove();
         const alltr = tbody.querySelectorAll("tr");
@@ -52,6 +54,7 @@ function addNewRow(index) {
     });
 }
 
+
 button.addEventListener('click', () => {
     const alltr = tbody.querySelectorAll("tr");
     if (alltr.length == 0) {
@@ -64,5 +67,15 @@ button.addEventListener('click', () => {
         // +alltr[alltr.length-1].id => "3" => 3
         // addNewRow(3)
     }
+   
 });
 
+const buttonsave = document.createElement("button");
+buttonsave.textContent = "Сохранить";
+document.body.appendChild(buttonsave);
+
+buttonsave.addEventListener("click", () => {
+    const base = [];
+    const ew = document.getElementsByClassName("CNinputs");
+    console.log(ew);
+});
