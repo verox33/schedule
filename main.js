@@ -1,3 +1,6 @@
+const tg = window.Telegram.WebApp;
+const userName = tg.initDataUnsafe.user.first_name;
+
 const table = document.getElementById("ew");
 
 const tbody = document.querySelector("#Monday > table > tbody");
@@ -46,7 +49,6 @@ function addNewRow(index) {
     });
 }
 
-
 button.addEventListener('click', () => {
     const alltr = tbody.querySelectorAll("tr");
     if (alltr.length == 0) {
@@ -59,6 +61,5 @@ button.addEventListener('click', () => {
         // +alltr[alltr.length-1].id => "3" => 3
         // addNewRow(3)
     }
-   
 });
-
+console.log(userName);
