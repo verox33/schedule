@@ -6,7 +6,7 @@ const table = document.getElementById("ew");
 const tbody = document.querySelector("#Monday > table > tbody");
 
 const nametg = document.getElementById("nametg");
-nametg.textContent = "Hi, " userName;
+nametg.textContent = `Hi, $(userName)`;
 
 const button = document.getElementById('qw');
 
