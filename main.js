@@ -74,8 +74,16 @@ const buttonsave = document.createElement("button");
 buttonsave.textContent = "Сохранить";
 document.body.appendChild(buttonsave);
 
+
 buttonsave.addEventListener("click", () => {
-    const search = document.querySelectorAll("#Monday, table > tbody > tr > td");
-    let data = JSON.stringify(search);
+    const search = document.querySelectorAll("#Monday > table > tbody > tr > td > input");  // NodeList
+
+    let data = [];
+    for (let i = 0; i < search.length; i++) {
+        data.push(search[i].value);
+    }
+
+    data = JSON.stringify(data);
     tg.sendData(data);
 });
+
