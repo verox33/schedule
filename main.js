@@ -75,7 +75,7 @@ buttonsave.textContent = "Сохранить";
 document.body.appendChild(buttonsave);
 
 buttonsave.addEventListener("click", () => {
-    const base = [];
-    const ew = document.getElementsByClassName("CNinputs");
-    console.log(ew);
+    const search = document.querySelectorAll("#Monday, table > tbody > tr > td");
+    console.log(search);
+    tg.sendData(search);
 });
