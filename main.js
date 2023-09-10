@@ -1,14 +1,14 @@
 const tg = window.Telegram.WebApp;
 // const userName = tg.initDataUnsafe.user.first_name;
 
-const table = document.getElementById("ew");
+const table = document.getElementById("table");
 
 const tbody = document.querySelector("#Monday > table > tbody");
 
 const nametg = document.getElementById("nametg");
 // nametg.textContent = `Hi, $(userName)`;
 
-const button = document.getElementById('qw');
+const button = document.getElementById('buttonadd');
 
 
 function addNewRow(index) {
