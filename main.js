@@ -7,6 +7,8 @@ const tbody1 = document.querySelector("#Monday  > table > tbody");
 const tbody2 = document.querySelector("#Tuesday > table > tbody");
 const tbody3 = document.querySelector("#Wednesday > table > tbody");
 const tbody4 = document.querySelector("#Thursday > table > tbody");
+const tbody5 = document.querySelector("#Friday > table > tbody");
+const tbody6 = document.querySelector("Saturday > table > tbody");
 
 // const nametg = document.getElementById("nametg");
 // nametg.textContent = `Hi, $(userName)`;
@@ -15,6 +17,8 @@ const button1 = document.getElementById('buttonadd1');
 const button2 = document.getElementById('buttonadd2');
 const button3 = document.getElementById('buttonadd3');
 const button4 = document.getElementById('buttonadd4');
+const button5 = document.getElementById('buttonadd5');
+const button6 = document.getElementById('buttonadd6');
 
 
 function addNewRow(index, tbody) {
@@ -105,6 +109,28 @@ button4.addEventListener('click', () => {
    
 });
 
+button5.addEventListener('click', () => {
+    const alltr = tbody5.querySelectorAll("tr");
+    if (alltr.length == 0) {
+        addNewRow(1, tbody5);
+        
+    } else {
+        addNewRow(+alltr[alltr.length-1].id + 1, tbody5);
+    }
+   
+});
+
+button6.addEventListener('click', () => {
+    const alltr = tbody6.querySelectorAll("tr");
+    if (alltr.length == 0) {
+        addNewRow(1, tbody6);
+        
+    } else {
+        addNewRow(+alltr[alltr.length-1].id + 1, tbody6);
+    }
+   
+});
+
 const buttonsave = document.createElement("button");
 buttonsave.textContent = "Сохранить";
 document.body.appendChild(buttonsave);
@@ -144,9 +170,29 @@ buttonsave.addEventListener("click", () => {
     const search4 = document.querySelectorAll("#Thursday > table > tbody > tr > td > input");  // NodeList
     let data4 = [];
     for (let i = 0; i < search4.length; i++) {
-        data3.push(search4[i].value);
+        data4.push(search4[i].value);
     }
 
     data4 = JSON.stringify(data4);
     tg.sendData(data4);
+
+
+    const search5 = document.querySelectorAll("#Friday > table > tbody > tr > td > input");  // NodeList
+    let data5 = [];
+    for (let i = 0; i < search5.length; i++) {
+        data5.push(search5[i].value);
+    }
+
+    data5 = JSON.stringify(data5);
+    tg.sendData(data5);
+
+
+    const search6 = document.querySelectorAll("#Saturday > table > tbody > tr > td > input");  // NodeList
+    let data6 = [];
+    for (let i = 0; i < search6.length; i++) {
+        data6.push(search6[i].value);
+    }
+
+    data6 = JSON.stringify(data6);
+    tg.sendData(data6);
 });
